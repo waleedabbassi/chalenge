@@ -1,0 +1,67 @@
+TASKONE
+VAR
+x,y,z := INTEGER
+
+BEGIN
+write(x,y,z);
+read(x,y,z)
+x:=y;
+y:=z;
+z:=x;
+write("les valeurs de x,y,z est ",x , y , z)
+END
+//_____________________________________________________________________________________________________//
+TASKTWO
+VAR
+r,tarif1,tarif2:=FLOAT
+ins : FLOAT := 0.3;
+VAT : FLOAT := 018;
+r1 : FLOAT := 0.7;
+r2 : FLOAT := 0.4;
+r3 : FLOAT := 0.2;
+p_d : INTEGER := 100;
+BEGIN
+IF (0<r<100) THEN
+    tarif1:=r1+ins+VAT;
+ELSE_IF (101<r<1000) THEN
+    tarif1:=r2+ins+VAT;
+ELSE
+    tarif2:=p_d+ins+VAT;
+END
+IF (tarif1<tarif2) THEN
+write("tarif1 suitable");
+ELSE
+write("tarif2 suitable");
+END
+END
+//______________________________________________________________________________//
+TASKthree
+VAR
+date:= INTEGER;
+year, month, day := STRING;
+BEGIN
+write("entrer un date a 6 chiffre",date);
+read(date);
+day:= copy((date),1,2);
+month:= copy((date),3,2);
+SWITCH (month) DO
+1: month := "January";
+2: month := "February";
+3: month := "March";
+4: month := "April";
+5: month := "May";
+6: month := "June";
+7: month := "July";
+8: month := "August";
+9: month := "September";
+10: month := "October";
+11: month := "November";
+12: month := "December";
+END_SWITCH
+year:="20" + copy((date),5,2)
+
+write("day: ", day);
+write("month: ", month);
+write("year: ", year);
+
+END
