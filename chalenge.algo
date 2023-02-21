@@ -58,7 +58,7 @@ SWITCH (month) DO
 11: month := "November";
 12: month := "December";
 END_SWITCH
-year:="20" + copy((date),5,2)
+year:="20" + copy((date),5,2);
 
 write("day: ", day);
 write("month: ", month);

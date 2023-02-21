@@ -1,0 +1,78 @@
+//---------------------PROBLEM 1--------------------------------------------------------//
+FUNCTION elment_dist(tab1,tab2: ARRAY_OF INTEGER[6]) : INTEGER
+
+VAR
+i,j,somme:INTEGER;
+somme:=0;
+
+BEGIN
+FOR i FROM 0 TO tab1.Length-1   DO
+    
+    IF ((tab1(i)<>tab2.Length[j])) THEN
+        
+        somme:= somme+tab1[i]; 
+    END_IF
+END_FOR
+FOR j FROM 0 TO tab2.Length-1  DO
+    IF (tab2(j)<>tab1.Length[i]) THEN
+        
+        somme:=somme+tab2[j];
+    END_IF
+    
+END_FOR
+
+elment_dist:=somme ;
+
+END
+END elment_dist
+
+PROCEDURE affichage(tab1,tab2: ARRAY_OF INTEGER[6])
+VAR
+    tab1,tab2 : INTEGER;
+BEGIN
+write("entrer des elements:", (tab1));
+read(tab1[i]);
+write("entrer des  elements:", (tab2));
+read(tab1[j]);
+
+writeln("distinct elements:", elment_dist(tab1, tab2));
+END
+END affichage
+
+//---------------------------PROBLEM 2------------------------------------------//
+
+PROCEDURE dotProduct(v1,v2: ARRAY_OF INTEGER[][]; var ps: INTEGER);
+VAR
+i: INTEGER;
+BEGIN
+ps := 0;
+FOR i FROM 0 TO v1.Length-1   DO
+
+ps := ps + (v1[i] * v2[i]);
+
+END_FOR
+END dotProduct
+
+FUNCTION Orthogonal(v1, v2: ARRAY_OF INTEGER): BOOLEAN;
+VAR
+ps : INTEGER;
+BEGIN
+dotProduct(v1, v2, ps);
+IF ps = 0 THEN
+Orthogonal := true
+ELSE
+Orthogonal := false;
+END_IF
+END
+END Orthogonal
+
+PROCEDURE affichage(V1,V2: ARRAY_OF INTEGER[])
+VAR
+    V1,V2 : INTEGER;
+    Orthogonal: BOOLEAN;
+BEGIN
+
+writeln("les vecteur sont Orthogonal ? :", Orthogonal);
+
+END
+END affichage
