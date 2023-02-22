@@ -76,3 +76,6 @@ writeln("les vecteur sont Orthogonal ? :", Orthogonal);
 
 END
 END affichage
+
+
+

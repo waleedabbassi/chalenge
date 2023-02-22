@@ -1,0 +1,21 @@
+PROCEDURE triInsertion( VAR tab: ARRAY_OF INTEGER);
+VAR
+  i, j, temp: INTEGER;
+BEGIN
+  FOR i FROM 1 to High(tab) DO
+  
+    j := i;
+    while (j > 0) and (tab[j] < tab[j-1]) do
+    
+      temp := tab[j];
+      tab[j] := tab[j-1];
+      tab[j-1] := temp;
+      j := j - 1;
+
+    END 
+    
+  END_FOR
+  
+END
+
+
