@@ -1,0 +1,44 @@
+FUNCTION Palindrom(var ch:STRING) : BOOLEAN
+VAR 
+    t:= length.ch;
+
+BEGIN
+    IF (t <= 1) THEN
+        Palindrom:= true; 
+    End;
+    IF (ch[1] = ch[(t-1 )] )  THEN 
+    Palindrom:=Palindrom(copy(ch,2,t-2)) ;
+    else
+    Palindrom :=false;
+    END;
+    
+END
+//--------------------------------------------------------------------//
+FUNCTION is_palindrome(s : STRING[50], start,end : INTEGER) : BOOLEAN
+BEGIN
+    IF (start >= end) THEN
+        RETURN TRUE;
+    ELSE_IF (s[start] = s[end]) THEN
+        RETURN is_palindrome(s, start +1, end -1);
+    ELSE
+        RETURN FALSE
+    END_IF
+END
+
+// initial call 
+// is_palindrome(s,0,s.length-1)
+
+
+
+
+
+
+
+
+//__________________________________________________//
+type : 
+
+Récursion terminale : la fonction se termine par l'appel récursif unique.
+Récursivité multiple : si un des cas traités est résolu avec plusieurs appels récursifs.
+Récursivité croisée ou mutuelle : deux algorithmes sont mutuellement récursifs si l'un utilise l'autre et vice versa.
+Récursivité imbriquée : si la fonction contient un appel à elle-même en tant que paramètre.
